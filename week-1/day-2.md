@@ -1,0 +1,123 @@
+- TSO Edit Commands
+    - I - Insert
+    - IX - X number of lines will be inserted
+    - D - Delete
+    - DX - Delete X number of lines
+    - R - Repeats a line next to the current line
+    - RX - repeated X number of times
+    - C - Copy - copy a record
+        - A - After
+        - B - Before
+    - CX - Copy X many lines
+    - M - Move (Cut a line)
+        - A - After
+        - B - Before
+    - MX - Cut X number of lines
+    - X - Hides a record
+    - XX - Hides X number of lines/records
+    - ) - moves the line 2 positions to the right
+    - )X - moves the line with X number of positions
+    - ( - move the record to the left
+    - LC - Lower case
+    - LCX - X number of lines converted to lower case
+    - UC - Upper case
+    - UCX - X number of lines converted to upper case
+    - TS - Splits - splits a record across next line
+        - enter command and put cursor on place where you want to split
+    - TF - Text Flow - tries to bring all the lines below it to the current line
+        - Won't just affect split lines, but try to accomodate all lines below it
+    
+    
+    - MASK - allows user to give a title for the fields/columns
+        - Can be overwritten
+    - COLS - displays the column numbers
+    - BNDS - Boundary inside which the commands will work
+        - <   >
+        - Say we set the boundary around the name column
+            - Now, when we sort, it will sort based on name
+    - LABELS - Identify a record or a group of records by labeling them 
+        - using a dot and a character: .CHAR
+    
+- Commands:
+    - SAVE -> saves changes
+    - END/EXIT -> takes you to previous screen (like F3)
+    - RESET (RES) -> refreshing the screen
+    - FIND (F) -> F 'search term'
+        - should highlight all occurences of that string in the file
+        - F All -> also gives the count
+        - can also specify columns in which to search
+            - F ALL 'harry' 1 20
+        - can label records using .character
+            - Then use these labels as search term
+            - F ALL 'RON' .G .S
+                - will still highlight all ocurrences, but only count those within the labels
+        - can combine row + column search
+            - F ALL 'RON' .G .S 1 10
+        - F ALL P'@' -> find all alphabetical
+        - F ALL P'#' -> find all numeric
+    - CHANGE -> find and replace
+        - C 'string' 'replacement'
+            - This will change the first occurrence
+        - C all 'string' 'replacement'
+            - Will change all occurrences of the string
+        - C all A Z 1 9 
+            - Change A to Z between columns 1 and 9
+            - also note here that because we are passing single characters, we don't need quotes
+        - C all Z A .A .B 1 10
+            - Change z to a between label .A and .B, between columns 1 and 10
+    - SORT - sort records based on location
+        - SORT 12 20 A
+            - sort based on characters from col 12 to 20 in ascending order
+            - sorted by special characters first, lowercase, uppercase, numbers
+    - SUBMIT -> submit a job for execution
+    - START -> starts another parallel screen
+        - Current screen will be hidden behind
+        - Hit F9 to swap between screens
+    - PROFILE - shows certain information about the environment
+        - CAPS ON
+        - HILIGHT
+        - UNNUM
+    - CAPS OFF - turns capital to off, when you get enter new data, it won't be converted to caps automatically
+    - NULLS OFF - arrow key now represents a space, treats right arrow key as adding a space
+    
+- Group Commands:
+    - DD
+        - DD on first line
+        - DD on last line
+        - Will delete all lines between
+    - CC
+        - CC on first line
+        - CC on last line
+        - Will Copy all lines betweens
+    - MM
+    - RR
+        - RR on first line
+        - RR on last line
+            - can also specify a number
+            - ex: RR5 will repeat the lines 5 times
+    - ((
+        - move a group of lines to the left
+        - specify a number to indicate how big the shift is
+    - ))
+        - move a group of lines to the right
+        - specify a number to indicate by how many positions the shift is
+    - LCC
+        - make a group of lines lowercase
+    - UCC
+        - make a group of lines uppercase
+- Use the Insert Key to toggle between
+    - Hitting space moves everything to the right
+    - Hitting the space will over-write existing characters
+    - You can check whether this is toggled by looking at the carrot icon at the bottom of 3270 terminal
+- Scroll on the top right indicates by how much the screen scrolls
+    - Default is "PAGE", scrolls an entire page
+    - Can change "PAGE" to a number, indicating how many lines to scroll
+    - Another option is "CSR" where page scroll is determined by where the cursor is
+        - Whatever line your cursor is on will be the top record after the page is scrolled
+- Using ( and ) to move lines to the left and right
+    - Be careful because moving past the bounds of the screen will truncate the data
+- Hiding lines using X command, calling RES brings the hidden lines back
+- Mask - lets us provide column headers for new data
+    - to get rid of mask, use mask command again, delete the column headers, and make sure to save
+- Use RETP to retrieve the previous command
+
