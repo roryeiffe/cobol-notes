@@ -188,3 +188,93 @@
 - Choose option 14 from Utilities Menu
 - Specify search term and which file to search in
 - Also, check out option at bottom to specify multiple search terms
+
+
+
+
+## Jobs
+- Column Definition
+    - syntax-based coding
+    - Lrecl = 80 only, recmf = fb only *mandatory*
+    - 1,2 Columns - identifier field -> //
+    - 3-10 Columns - name field, names can have max of 8 characters, same rule of a member, must start with alpha then can be alphanumeric
+        - name of job should be user id and extra characters
+    - 11 Column - must be empty
+    - 12 - 15 Columns - Operation Field
+        - JOB
+        - EXEC
+        - DD
+    - 16-71 Parameter Fields
+    - 72-80 Columns - must not be used, it is for the system to use
+- Every job must have 3 statements:
+    1. Job Card - the word job must be there
+        - first line of a job must have the word job
+        - Only one job card for a single job
+        - Parameters -
+            - Positional Parameters - Optional
+                - Author Name "Rory"
+                - Accounting Information
+                    - To which company was this job written, which department
+                    - (BNYM, Credit Card)
+            - Keyword Parameters - 
+                - NOTIFY - direct where the status code is to be written, can direct to particular user id
+                    - Can also type =&SYSUID to direct to whoever is logged on
+                    - Mandatory parameter
+                - Optional Parameters:
+                    - CLASS = A-Z, 0-9 -> Classification of your job
+                        - Example, let Revature trainees submit jobs through class R
+                        - Can help to delegate priority/security
+                    - MSGCLASS = A-Z,0-9 -> Format of the Report
+                        - Example, route output to printer
+                        - For us, we want to route to terminal
+                    - MSGLEVEL = (X, Y) (1,1)
+                        - X = what type of report do you want the system to generate (JCL, Output Errors) (0,1,2)
+                        - Y = when do you want the report to be generated (0,1)
+                            - on failure, on success
+                    - PRTY = (Not Party) Priority -> 1-15
+                    - TIME = (M,S), request how much time the processor gives you
+                        - Administrators can override it
+                    - REGION = 0M - max allowable space in the execution region
+                        - Partitioned the processor into regions
+                    - COND = More on this later
+                    - TYPRUN = SCAN/HOLD
+                        - SCAN - Scans the job for syntax errors
+                            - It will not execute the job
+                        - HOLD - job will go in queue until someone authorized releases the job for execution
+                    - RESTART = 
+                        - In a multi-step job, if you want to execute from a particular step skipping the previous steps, you can mention RESTART=step-name
+    2. Job Step - execute some known utility
+        - can be 255 steps in a single job
+    3. DD Statements - DataSet Definition Statements
+        - Each step can have 3273 DD statements
+- JES (Job-Entry Sub-System) will take job and give you a job id
+    - Like receiving a token at a bank to get in line
+    - Every time, we submit a job, will get a different job id
+    - After you submit a job, need to go somewhere else to see it
+    - Will send job through job queue to the processor
+    - Processor sends status code directly to user screen
+    - Processor will deposit job reports to the spool
+- Spool - small buffer space
+    - report of all the jobs are deposited
+    - It will hold every job's report
+    - It has a small memory
+    - Simultaneous Peripheral Output OnLine
+    - When we visit SPOOL, should use "start" command to open a parallel screen
+        - Remember use F9 to swap between screens
+    - To access SPOOL
+        - Choose option 9, IBM products
+        - Choose option S SDSF
+        - Enter ? next to job
+        - Enter s to show output
+    - 
+- Status Code
+    - Condition Code/Return Code
+    - CC/RC -> numerical representation of the status of the job
+        - 0000 -> successful
+        - 0004 -> successful, but with warnings or information
+        - >= 0008 -> severe error, 12, 16, 20, 22, 4095
+- Status of the job is represented in 2 ways:
+    - Abend Codes - program abnormally ends - S806, SOC4, SOC7, 722
+    - Condition Codes
+- JCL Error/Internal Error
+    - ex: forgot a comma
