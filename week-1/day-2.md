@@ -1,4 +1,4 @@
-- TSO Edit Commands
+## Edit Commands
     - I - Insert
     - IX - X number of lines will be inserted
     - D - Delete
@@ -121,3 +121,70 @@
     - to get rid of mask, use mask command again, delete the column headers, and make sure to save
 - Use RETP to retrieve the previous command
 
+
+## Creating a PDS, creating members
+- PDS is like a folder
+- 3 - utilities
+- 2 - Date Set
+- Allocate a new PDS
+    - for data set name type, make sure to set as "PDS"
+- When we try to open with "E", we get "No member in data set"
+    - Cannot open an empty folder
+    - To create a new member, type E in the command slot on the left and then add a member name enclosed in parentheses)    
+        - ex: E     ari001.rory.revat.PDS(member)
+        - This works if we have members as well
+    - Now that we have a member, we can hit e to open the PDS and browse the members
+- When we are inside the PDS
+    - We can browse members
+    - Can also use s command to create a new member
+        - ex: s member2
+    - Use r command to rename a member
+    - Use d command to delete a member
+- We allocate directory blocks as 1, so we can create 5 members
+    - If we try to create and save a 6th member, we get "no space in directory". 
+- PS and PDS member will behave similar
+
+### PDS Commands
+- From the DSLIST menu, use Z command to compress a PDS
+    - remove any unused space
+    - Only works with PDS
+- While within a PDS, type C next to members you want to copy
+    - Hit enter to copy to a new PDS
+    - If enter an destination that doesn't exist, create a new PDS and we get 2 options
+        - copy attributes of current PDS
+        - create new attributes
+    - If destination does exist
+        - can choose to replace or not to replace duplicate members
+- Copy records from one file into another
+    - can be a PDS member or a PS
+    - Type "cut" in the command region of a file
+        - Can also type "M" to specify which lines to copy
+    - To paste, go to a new file, use A or B to specify after or before and then run PASTE command
+- Searching for a keyword across multiple members
+    - Don't want to open each member and type "F Poland"
+    - Can ask a system to search a string in all of the members
+    - SRCHFOR 'srch-term'
+        - Will give "Found" next to members in which string resides
+- Compare 2 PDS
+    - Main Menu -> Utilities -> SuperCE Utility
+    - Enter the names of the PDS to check
+    - Enter options like which members to check
+    - Will generate a report. Take some time to examine this report
+- Option 15 from utilities
+    - Compare strings in 2 PDS
+
+## PS
+### Compare 2 PS
+    - From main menu, go to utilities, choose option 12, SuperC
+    - Enter names of data sets to compare
+    - Should generate a report
+    - Example, could compare list of policy holders to those who have paid premium to find people who have not paid their premium
+
+### Move/Copy Members/Data Sets
+- Select Option 3 from utilities
+    - Enter source and destination
+
+### Search For Terms within PS
+- Choose option 14 from Utilities Menu
+- Specify search term and which file to search in
+- Also, check out option at bottom to specify multiple search terms
