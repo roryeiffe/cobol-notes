@@ -55,6 +55,48 @@
         - PSTEP.SYSUT1 DD DSN=ARI001.RORY.REVAT.OUTPUT.PS,DISP=SHR
 
 ## Sort Utility
+- SORT - default sort utility on your system
+    - Capabilities:
+        1. Sort
+        2. Reformat the data (Changing the Fields, introducing new fields, removing fields, arithmetic operations, etc.)
+        3. Sum Up Values
+        4. Eliminate Duplicates
+        5. Split records into multiple output fields
+        6. Merge Data
+        7. Choose records by condition (filtering)
+        8. Generate reports
+    - DDNAMES
+        - INPUT -> SORTIN, SORTIN01, SORTIN02, ETC.
+        - OUTPUT -> SORTOUT, SORTOF01, SORTOF3, ETC.
+        - SORTWK01 -> Temporary file, where the processing happens (optional)
+        - SYSOUT DD SYSOUT=* - mandatory for sorting utility
+        - SYSIN DD *
+            - SORT CARDS
+        - /*
+```
+1001 TOMMY CHENNAI 800000
+1234 JERRY DISNEY  700000
+```
+    - To sort records in some order based on a field
+        - Sort Fields = (STPOS, LENGTH, TYPE, ORDER)
+            - STPOS -> the starting column of the field by which to sort
+            - LENGTH -> the number of characters starting from STPOS, that makes up the field
+            - TYPE -> CH (CHAR), ZD (Zone Decimal), PD (Packed Decimal)
+                - For numbers use ZD
+            - ORDER -> A (Ascending) or D (Descending)
+        - Sum Fields = (STPOS, LENGTH, TYPE)
+- DFSORT - paid utility that doesn't come default
+- Choosing records base on conditions:
+    - LOGICAL - AND, OR
+    - COMPARATIVE - LT, GT, GE, LE, EQ, NE
+    - SYSIN DD *
+        - SORT FIELDS=(1,4,CH,A)
+        - INCLUDE COND=(STPOS,LENGTH,CH,EQ,C'STRNG')
+        - INCLUDE COND=(STPOS,LENGTH,ZD,EQ,1234)
+        - OMIT COND=
+    - For a range of salaries
+        - SORT FIELDS=(1,4,CH,A)
+        - INCLUDE COND=(22,6,ZD,GE,050000,AND,22,6,ZD,LE,080000)
 
 
 
