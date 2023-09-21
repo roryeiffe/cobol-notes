@@ -21,6 +21,8 @@
             - Every job must have a step
         - IEBGENER -> Copy from a PS to a PS
             - only from a flat file to a flat file
+            - Input DD Name: SYSUT1, instream data or input file
+            - Output DD Name: SYSUT2, SPOOl/DATASET
         - IEBCOPY -> Copy from PDS to a PDS
             - Note that we can do this using edit commands as well, but now we are using jobs
         - IEBEDIT -> Edit datasets 
@@ -93,8 +95,7 @@
                         - PS -> PS
                         - PO -> PDS
                         - LIB -> Library
-
-
+                - LIKE - pass in the name of another file, copies the attributes of that file
     2. System (mandatory)
         - OUTPUT:
             - SYSPRINT DD SYSOUT=*
@@ -123,3 +124,56 @@
     - type //p at upper limit of lines to purge
     - type // at lower limit
     - Hit enter a few times
+
+- Whenever a new dataset is about to be created in a Job, ensure that dataset doesn't exist
+    - Pre-Deletion -> when trying to create a file
+        - if it exists delete it
+        - if it doesn't exist, create it and delete it
+        - MOD parameter acts like OLD and NEW
+    - This is an important topic for projects, whenever you create a dataset in a project, use pre-deletion
+- Backward Reference - 
+    - It is a technique in which the DCB parameter of a ddname can be made to refer a DCM parameter mentioned in any previous ddnames
+    - If it refers to a ddname of a previous step
+        - DCB=*.STEPNAME.DDNAME
+        - ex: DCB = *.STEP000.DD1
+- Hands-On
+    - Using ISPF 3.2
+        - Create a PS -> HLQ.data.ps
+            - 1234 -NAME- DEP 79.23 87.63
+                - 4 chars id
+                - 6 chars name
+                - 3 chars department code
+            - insert 6 records in the above format
+        - Write a job
+            - STEP000 PREDELETE
+                - HLQ.DATA.OUTPUT.PS1
+                - HLQ.DATA.OUTPUT.FINAL
+            - STEP001 COPY THE DATA FROM HLQ.DATA.PS into HLQ.DATA.OUTPUT.PS1
+                - INPUT: Already Exists
+                - OUTPUT: Allocate in the step
+            - STEP002 - Copy Data from HQL.DATA.OUTPUT.PS1 into HLQ.DATA.OUTPUT.FINAL
+                - Note, if the data is successfully copied into HLQ.DATA.OUTPUT.FINAL, delete the HLQ.DATA.OUTPUT.PS1
+                - If the copy failed, CATLG the HLQ.DATA.OUTPUT.PS1 dataset
+
+- SET Command
+    - like defining a variable/macro
+    - SET A=OZAGS1.ALWYN.ALWYN.PS
+    - To use this variable, type: &A
+        - We've already seen this symbolic representation with &SYSUID
+    - When using 2 symbolic parameters next to each other, must separate with 2 dots
+    - ex:
+        - SET B=AWLYN
+        - SET C=PS7
+        - OZAGS1.&B..&C..NEW => OZAGS1.ALWYN.PS7.NEW
+- IF Statement
+    - Can use if statement to check things like RC of previous step
+    - ex:
+    - STEP001
+        - ...
+    - IF (STEP001.RC=4) THEN
+        - //Step002
+        - ...
+    - ELSE
+        - //STEP003
+        -...
+    - ENDIF

@@ -163,6 +163,7 @@
         - B - Browse Mode - read-only
         - I - Information about the file
         - S - Short Info
+        - J - Run Job
 
         PDS
         - C - Copy a Member
