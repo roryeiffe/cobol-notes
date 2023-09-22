@@ -1,0 +1,102 @@
+## Review Session
+- AND/OR in sort condition
+    - //* greater than 50000 less than 80000
+    - INCLUDE COND=(22,6,ZD,GE,050000,AND,22,6,ZD,LE,080000)
+    - //* new jersey or new york:
+    - INCLUDE COND=(12,9,CH,EQ,C'NEW JERSEY',OR,12,8,CH,EQ,C'NEW YORK')
+    - //* Choosing records with location as new york and salary GE 50000
+    - INCLUDE COND=(12,8,CH,EQ,C'NEW YORK',AND,22,6,ZD,GE,50000)
+- Can we do Sum field and include in the same card?
+    - Can do sort field, then sum field, and then include
+- Difference between PDS and Library?
+    - Library is for object code, system readable, not user readable
+    - PDS to create and store jobs
+- When the number of members exceeds space in directory, will get error "No space in directory"
+- Two types of data set
+    - File - Physical Sequential (PS)
+        - Name of the file, broken into qualifiers (not extensions)
+            - first qualifier is user id
+        - Space Units
+            - Tracks, Cylinders, Bytes, KB, MB
+            - Commonly use tracks
+            - Primary Quantity - initial amount of space to be allocated
+            - Secondary Quantity - when primary is exhausted
+            - How many times will secondary quantity be allocated (15 times)
+                - Total 16
+            - Directory Blocks - max amount of members for PDS
+                - N X 6 - 1
+        - Record Length
+            - Maximum record length - 32 KB
+            - Normally use 80 for jobs/cobol programs
+        - Block Size
+            - Must be in multiples of record length
+        - Record Format
+            - Normally use FB
+        - Dataset Organization Type
+            - Empty for PS
+            - PO for PDS
+    - Folder - Partitioned Data Set (PDS)
+- Job - a collection of steps/tasks that the user wants the system to perform
+    - Job Card
+    - Job Step, EXEC statement
+        - Max 255 steps in a job
+        - 
+    - DD Statements
+        - Max 3273
+        - SYSPRINT DD SYSOUT=* (requesting to be put in SPOOL)
+        - SYSOUT DD SYSOUT=* (mandatory for SORT utility)
+        - SYSIN DD * (where we write sort fields, sum fields, etc.)
+- Imagine we have 3 steps, steps 1,2, and 3
+    - Want the system to not execute step 1 but just execute steps 2 and 3?
+        - Use parameter restart and set it to step that you want to execute from
+- Imagine we have 3 steps, only want step 2 to happen
+    - Restart parameter, set to step 2
+    - Add a null statement after step 2 (just 2 slashes), signifying the end of the job
+- How to test if job has syntax errors?
+    - TYPRUN = scan
+- What is a procedure?
+    - Pre-defined step that you can call later
+    - Re-usable chunk of steps that can be invoked
+    - Types of procedures?
+        - INSTREAM
+            - Written within the job that's using it
+        - CATALOG
+            - Defined in a separate member and can be called from anywhere
+            - Call by the member name
+- Overriding DD Statements
+- Backward Reference?
+    - Parameter DD name refers to a previous DD name
+    - *.DDNAME or *.STEPNAME.DDNAME if from different step
+- Empty File Handling Technique
+    - Count(1)
+- Pre-Deletion Technique
+
+
+## Sort Utility
+- Reformatting
+    - Reorganizing the fields in the output
+    - Picking and Choosing the fields to the output
+    - Arithmetic Operations
+    - Introducing new fields in the output
+- Four Different Syntaxes:
+    - INREC Fields -> list all the fields that you need (the fields that are not mentioned will not be brought to the output file)
+        - INREC will act before sorting
+    - INREC Overlay -> by default, all of the fields will be brought to the output
+        - INREC will act before sorting
+    - OUTREC Fields -> list all the fields that you need (the fields that are not mentioned will not be brought to the output file)
+        - OUTREC will happen after sorting
+    - OUTREC Overlay -> by default, all of the fields will be brought to the output
+        - OUTREC will happen after sorting
+    - OUTREC FIELDS=(POS IN THE OUTPUT:STPOS OF THE FIELD YOU WANT,LENGTH, STPOS, LENGTH, etc...)
+- Arithmetic Operations
+    - OUTREC FIELDS=()
+        - ADD,MUL,SUB,DIV
+
+## Exercise:
+- Input Sample data:
+- 1001 tommy chennai 80000
+- Write a sort command to enerate email id for each record
+    - First 3 chars of name and first 3 chars of location and the string 'revature.com'
+    - Must be printed on 30th column
+- Expected output:
+    - 1001 tommy Channai 80000    tomche@revature.com
