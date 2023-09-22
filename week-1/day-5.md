@@ -91,6 +91,24 @@
 - Arithmetic Operations
     - OUTREC FIELDS=()
         - ADD,MUL,SUB,DIV
+- Splitting records from a single file to multiple output files
+    - SORTIN DD
+    - SORTOUT DD
+    - When more than 1 output files -> SORTOF01, SORTOF02, ETC.
+    - Split based on what?
+        - Value in a column
+            - // JOBCARD
+            - //SORTIN DD
+            - //SORTOF01 DD DSN
+            - //SORTOF02 DD DSN
+            - // STEP1
+            - SORT FIELDS=COPY
+            - OUTFIL FILES=01,INCLUDE=()
+            - OUTFIL FILES=02, INCLUDE=()
+        - Sequence of Records
+            - SORT FIELDS=COPY
+            - OUTFIL FILES=01,STARTREC=1,ENDREC=2
+            - OUTFIL FILES=02,STARTREC=3,ENDREC=4
 
 ## Exercise:
 - Input Sample data:
