@@ -135,4 +135,3 @@
         3. GDG-BASE-NAME(0) -> Refers to recent current member
         4. GDG-BASE-NAME(-1) -> Previous members
         
-    
