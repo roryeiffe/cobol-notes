@@ -109,6 +109,8 @@
             - SORT FIELDS=COPY
             - OUTFIL FILES=01,STARTREC=1,ENDREC=2
             - OUTFIL FILES=02,STARTREC=3,ENDREC=4
+            - if we don't give ENDREC, it will copy from STARTREC to the end
+            - if we don't give STARTREC, it will copy from beginning to ENDREC
 
 ## Exercise:
 - Input Sample data:

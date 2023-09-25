@@ -41,7 +41,8 @@
 - Commands:
     - SAVE -> saves changes
     - END/EXIT -> takes you to previous screen (like F3)
-    - RESET (RES) -> refreshing the screen
+    - RESET (RES) -> refre
+    ing the screen
     - FIND (F) -> F 'search term'
         - should highlight all occurences of that string in the file
         - F All -> also gives the count
