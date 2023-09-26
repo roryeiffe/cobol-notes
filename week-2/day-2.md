@@ -90,11 +90,13 @@
         - // REPRO INDATASET(ARI001.RORY.REVAT.VSAM.DATA) -
         -          OUTDATASET(ARI001.RORY.REVAT.VSAM.ESDS)
         - Other option:
-            - REPO INFILE (DDNAME) -
-            -      OUTFILE (DDNAME)
+            - REPRO INFILE (DDNAME) -
+            -       OUTFILE (DDNAME)
         - NOTE: ESDS accepts any number of REPROs from same input dataset or from different input dataset   
     3. Print the data by giving its RBA
-        - 
+        - PRINT INFILE(DD1) -
+        - CHAR -
+        - FROMADDRESS(400) TOADDRESS(672)
 - Cannot open an empty ESDS, will get MAXCC 12
 - PRINT CH IDS(/) - will display records with RBA
     - Note that there is a record from 400-479 but not at 480
