@@ -29,7 +29,7 @@
         - /*
     - Build the Index:
         - //sysin    dd *
-        -    BLDINDEX INDATASET(ARI--1.RORY.REVAT.VSAM.KSDS) -
+        -    BLDINDEX INDATASET(ARI001.RORY.REVAT.VSAM.KSDS) -
         -    OUTDATASET(ARI001.RORY.REVAT.VSAM.LOC.AIX)
     - Path - will allow the user to view the full record in the base cluster, depending on the Alternate key
         - We pass in the AIX name to the path entry
@@ -40,3 +40,18 @@
                 - PATHENTRY(ARI001.RORY.REVAT.VSAM.LOG.AIX)
             )
     - Deleting just the base cluster, the AIX and path will also be deleted
+- EXPORT -
+    - Permanent - after exporting, cluster will be deleted
+    - Temporary - even after exporting, cluster will still live
+    - https://www.techagilist.com/mainframe/jcl/vsam-export-import-using-idcams-with-examples/#google_vignette
+    - https://www.mainframestechhelp.com/utilities/idcams/import-and-export.htm
+    - Syntax:
+        - EXPORT ARI001.RORY.REVAT.VSAM.KSDS -
+        - OUTFILE(DD1)
+- IMPORT -
+    - Syntax:
+        - IMPORT OUTDATASET(ARI001.RORY.REVAT.VSAM.KSDS) -
+        - INFILE(DD2)
+
+
+- SUMFIELDS=NONE WILL ELIMINATE DUPLICATES IN SORT FIELD

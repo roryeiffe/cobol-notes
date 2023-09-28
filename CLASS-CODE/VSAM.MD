@@ -1,0 +1,52 @@
+## ESDS
+### ESDS CREATE
+- ![CREATE](./imgs/VSAM/ESDS/CREATE1.png)
+### ESDS REPRO
+#### INDATASET OUTDATASET
+- ![REPRO](./imgs/VSAM/ESDS/REPRO1.png)
+#### INFILE OUTFILE
+- ![REPRO](./imgs/VSAM/ESDS/REPRO2.png)
+### ESDS PRINT
+- ![PRINT](./imgs/VSAM/ESDS/PRINT1.png)
+- ![PRINT](./imgs/VSAM/ESDS/PRINT2.png)
+- ![PRINT](./imgs/VSAM/ESDS/PRINT3.png)
+- ![PRINT](./imgs/VSAM/ESDS/PRINT4.png)
+
+## KSDS
+### KSDS CREATE
+- ![CREATE](./imgs/VSAM/KSDS/CREATE1.png)
+### KSDS REPRO
+- ![REPRO](./imgs/VSAM/KSDS/REPRO1.png)
+### KSDS PRINT
+- ![PRINT](./imgs/VSAM/KSDS/PRINT1.png)
+
+## RRDS
+### RRDS CREATE
+- ![CREATE](./imgs/VSAM/RRDS/CREATE1.png)
+### RRDS REPRO
+- ![REPRO](./imgs/VSAM/RRDS/REPRO.png)
+- ![REPRO](./imgs/VSAM/RRDS/REPRO2.png)
+### RRDS PRINT
+- ![PRINT](./imgs/VSAM/RRDS/PRINT1.png)
+
+## LDS
+### LDS CREATE
+- ![CREATE](./imgs/VSAM/LDS/CREATE.png)
+
+## COMMANDS
+### ALTER
+- ![ALTER](./imgs/VSAM/COMMANDS/ALTER.png)
+### IMPORT
+- ![ALTER](./imgs/VSAM/COMMANDS/IMPORT.png)
+### EXPORT
+- ![ALTER](./imgs/VSAM/COMMANDS/EXPORT.png)
+### VERIFY
+- ![ALTER](./imgs/VSAM/COMMANDS/VERIFY.png)
+
+## AIX
+### DEFINE AIX
+- ![DEFINE](./imgs/VSAM/AIX/DEFINE.png)
+### BUILD
+- ![BUILD](./imgs/VSAM/AIX/BUILD.png)
+### PATH
+- ![PATH](./imgs/VSAM/AIX/PATH.png)

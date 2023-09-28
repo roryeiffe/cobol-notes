@@ -25,7 +25,7 @@
     - TS - Splits - splits a record across next line
         - enter command and put cursor on place where you want to split
     - TF - Text Flow - tries to bring all the lines below it to the current line
-        - Won't just affect split lines, but try to accomodate all lines below it
+        - Won't just affect split lines, but try to accommodate all lines below it
     
     
     - MASK - allows user to give a title for the fields/columns

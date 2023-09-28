@@ -170,7 +170,6 @@
         - FREESPACE(10,10)-
         - INDEXED -
         - KEY(4,0)) -
-        -  -
         - )
         - OFFSET -> STARTPOS - 1
         - KEY(LENGTH,OFFSET)
