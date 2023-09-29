@@ -1,0 +1,14 @@
+## Time Management
+- Story Points
+- We can assign a value to each requirement according to how much time/difficulty it will be
+- Example:
+    - step05 - 2
+    - step10 - 3
+    - step20 - 3
+    - step30 - 4
+    - step40 - 3
+- Break Down
+    - Hour 1 - step05
+    - Hour 2 - step10, step20
+    - Hour 3 - step30, step40
+    - Hour 4 - catchup/buffer time
