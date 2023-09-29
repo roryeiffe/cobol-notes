@@ -63,10 +63,122 @@
             - We can access each variable separately
             - LEVEL NUMBER 02-49 MUST BE MENTIONED IN MARGIN B, 12TH COLUMN OR HIGHER
 - Arithmetic Operations
+    - Works only for Numeric Data Type - 
+        1. ADD
+            - ADD 10 TO WS05-A
+            - ADD WS05-A TO WS05-B
+            - ADD WS05-A TO WS05-B WS05-C
+            - ADD WS-5-B GIVING WS05-C
+                - WS05-C = WS05-B + 10
+        2. SUBTRACT
+            - SUBTRACT 10 FROM WS05-A
+            - SUBTRACT WS05-A FROM WS05-B
+            - SUBTRACT WS05-A FROM WS05-B GIVING WS05-C
+        3. MULTIPLY 
+            - MULTIPLY WS05-A BY WS05-B
+            - MULTIPLY 10 BY WS05-B 
+            - MULTIPLY WS05-A BY WS05-C GIVING WS05-C
+        4. DIVIDE
+            - DIVIDE WS05-A BY WS05-B -> WS05-B(QUOTIENT)
+            - DIVIDE WS05-A BY WS05-B GIVING WS05-C REMAINDER WS05-D
+        5. COMPUTE (NATURAL ARITHMETIC OPERATORS)
+            - C = A * B / F - 23 + 2**2
+            - COMPUTE WS05-C = WS05-A * WS05-B / WS05-F - 23 + 2**2
+            - COMPUTE ROUNDED
 - Conditions
     - Relation Condition
+        - <, LESS THAN, >, GREATER THAN, EQUALS TO , =, <=, >=
     - Sign Condition - positive, negative, zero
     - Class Condition - alphabetic, numeric, alphabetic-lower,alphabetic-upper
     - Condition-Name Condition
     - Negated Condition - Not
-    - Combined Condition
+    - Combined Condition - AND/OR
+
+- Evaluate is more preferred over evaluate statement
+- If:
+    - Syntax:
+        - IF (CONDITION) THEN
+            - IMPERATIVE STATEMENT(S)
+        - ELSE IF (CONDITION) THEN
+            - IMPERATIVE STATEMENT(S)
+        - ELSE IF
+        - ELSE IF
+        - ...
+        - ELSE 
+            - IMPERATIVE STATEMENTS
+        - END-IF
+        - END-IF
+    - However many IFs you have, you must have END-IFs
+    - THERE MUST NOT BE A PERIOD ANYWHERE IN BETWEEN IF AND END-IF
+        - If you give a period, the IF is terminated
+    - Find the highest number:
+        - IF (WS05-A > WS05-B AND WS05-A > WS05-C) THEN
+            - DISPLAY 'A IS THE GREATEST'
+        - ELSE IF (WS05-B > WS-05 AND WS05-B > WS05-C) THEN
+            - DISPLAY 'B IS THE GREATEST'
+        - ELSE 
+            - DISPLAY 'C IS THE GREATEST'
+        - END-IF
+- Evaluate:
+    - Syntax:
+        - EVALUATE TRUE/FALSE/VARIABLE
+        - WHEN CONDITION
+            - IMPERATIVE
+        - WHEN CONDITION
+            - IMPERATIVE
+        - WHEN OTHER
+            - IMPERATIVE
+        - END-EVALUATE
+    - Syntax:
+        - EVALUTE TRUE
+        - WHEN (WS05-A > WS05-B AND WS05-A > WS05-C)
+            - DISPLAY 'A IS GREATEST'
+        - WHEN (WS05-B > WS-05 AND WS05-B > WS05-C)
+            - DISPLAY 'B IS GREATEST'
+        - WHEN OTHER
+            - DISPLAY C IS GREATEST'
+        - END-EVALUATE
+- Loops:
+    - When a certain number of statements need to be repeated for some purpose
+    - Iteration Statements
+    - PERFORM statements
+        1. Conditional 
+            - Until this condition is satisfied, repeat this statement, the loop runs
+            - Inline Perform
+                - When the group of statements to be iterated lies between "perform" and "end-perform" statement
+                - WS05-A PIC 9(02) VALUE 5.
+                - PERFORM UNTIL WS05-A > 10
+                    - DISPLAY 'HI'
+                    - ADD 1 TO WS05-A
+                - END-PERFORM.
+                - This will run 6 times
+                - But, if we take out the ADD statement, we will get infinity, 722 abend code
+                - WS05-A 9(02)VALUE 5
+                - PERFORM VARYING WS05-A FROM 1 BY 1 UNTIL WS05-A > 10
+                    - DISPLAY 'HI'
+                - END-PERFORM.
+                - How many times will it run? 10
+                - PERFORM VARYING WS05-A FROM 2 BY 3 UNTIL WS05-A > 10
+                - How many times will it run? 3
+                - PERFORM VARYING WS05-A FROM 10 BY -1 UNTIL WS05-A < 0
+            - Out-of-the-line
+                - 
+        2. Unconditional
+            - Doesn't check for any condition
+            - Inline Perform
+                - PERFORM 5 TIMES
+                    - DISPLAY 'HI'
+                - END-PERFORM
+                - PERFORM
+                    - DISPLAY 'HI'
+                - END-PERFORM
+                - (will perform once by default)
+                - PERFORM WS01-A TIMES
+                    - DISPLAY 'HI'
+                - END-PERFORM
+                - PERFORM WS01-A TIMES
+                    - DISPLAY 'HI'
+                    - ADD 1 TO WS01-A
+                - END-PERFORM
+            - Out-of-the-line
+    
