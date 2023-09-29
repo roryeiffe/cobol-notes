@@ -256,7 +256,7 @@ Control Interval
 | R1 = 80 | R2 = 80 | R3 = 80 | Unused | CIDF | RDS |
 -----------------------------------------------------
 ```
-RDF -> record description gield
+RDF -> record description Field
     - the number of records of similar size
     - 80|2
     - 90

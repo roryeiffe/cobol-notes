@@ -1,0 +1,72 @@
+## COBOL
+### Topics to Cover Today:
+- Signed Variables - Numeric:
+    - PIC 9(3) -> No sign
+    - 01 WS01-A     PIC S9(03) VALUE +123 A23
+        - Note: Signed variable, by default, is sign leading. The sign will be combined with the leading digit with the below convention
+    - 01 WS01-A     PIC S9(03) sign leading VALUE +123 A23
+    - 01 WS01-B     PIC S9(03) sign trailing VALUE +123 12C
+    - Convention -> +1 -> A, +2 -> B -> -1 -> j, -2 -> k ... -9 -> R, +0 -> {, -0 -> }
+    - 01 WS-01-STS    PIC S9(04) sign trailing Separate VALUE 123+
+    - 01 WS-01-SLS    PIC S9(04) sign leading  Separate VALUE +123
+- Decimal Variables
+    - Virtual Decimal Variables -> Numeric -> Arithmetic Operation - The decimal point will not be displayed: 123.456 -> 123456
+        - 01 WS01-VD    PIC 9(03)V(02) VALUE 123.45
+    - Physical Decimal Variables (alphanumeric) -> No arithmetic operation allowed on this variable
+        - No value clause is allowed
+        - Move statement is allowed
+        - 01 WS01-PD    PIC 9(03).9(02)
+- MOVE
+    - Allocation of a value to a variable can be done in 2 ways:
+        1. Value Clause - Data Division
+        2. Move Statement in procedure division
+            - Syntax: MOVE source TO destination-variables
+- Reference Modification
+    - A technique where parts of a variable can be handled individually
+    - Syntax: var(stpos:length)
+    - ex:
+        - 01 ws01-a pic a(05) value 12345
+        - 01 ws01-b pic 9(05) value 00000
+        - Move ws01-a(2:3) to ws01-b(3:3)
+- Figurative Constants:
+    - Space, spaces, zero, zeroes, zeros, 0
+- Group Items 
+    - 01 - level number -> system allocates 1 page of memory in the execution region (4kb)
+    - 01 - WS01-A PIC X(03) -> only uses 3 bytes of memory
+    - 77 - level number - elementary data item
+        - The number of bytes allocated is the number of bytes mentioned in the size clause
+    - Suggest: declare one variable at 01 level number and declare all the other variables in the same page/under that 01 level number variable
+    - Group Item - a variable which has member variables defined
+    - 01 WS01-VARS. 
+        - 02 WS02-VAR1        PIC 9(03).
+        - 02 WS02-VAR2        PIC 9(04).
+        - 02-49 -> represent member variables
+    - Rules of group item:
+        - It cannot have picture clause
+        - It can have value clause
+        - Values are considered to be alphanumeric
+        - A group item is identified as a group item if it has variables with higher level number
+        - THe member items can have their own different PIC clauses and sizes.
+        - The size of a group item is calculated by adding the sizes of its members
+    - Rules of a member item:
+        - Must have a level number higher than its group item
+        - Any higher level number if the member of its immediate previous lower level number
+        - A member item can be a SUB GROUP item.
+            - 01 WS01-vars. VALUE "TOMMY007USANJ991111
+                - 05 WS05-NAME     PIC A(10).
+                - 05 WS05-ID       PIC X(03).
+                - 05 WS05-ADDRESS.
+                    - 06 WS06-COUNTRY  PIC A(3).
+                    - 06 WS06-STATE    PIC A(3).
+                    - 06 WS06-PCODE    PIC 9(02).
+                - 05 WS05-PHONE     PIC 9(4).
+            - We can access each variable separately
+            - LEVEL NUMBER 02-49 MUST BE MENTIONED IN MARGIN B, 12TH COLUMN OR HIGHER
+- Arithmetic Operations
+- Conditions
+    - Relation Condition
+    - Sign Condition - positive, negative, zero
+    - Class Condition - alphabetic, numeric, alphabetic-lower,alphabetic-upper
+    - Condition-Name Condition
+    - Negated Condition - Not
+    - Combined Condition
