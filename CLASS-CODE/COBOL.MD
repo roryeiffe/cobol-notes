@@ -49,3 +49,11 @@
 #### CORRESPONDING MOVE AND LENGTH EXAMPLE:
 - ![MOVE](./imgs/COBOL/MOVE1.png)
 - ![MOVE](./imgs/COBOL/MOVE2.png)
+
+### READING AND VERIFYING FILES
+- ![FILE](./imgs/COBOL/FILE1.png)
+- ![FILE](./imgs/COBOL/FILE2.png)
+- ![FILE](./imgs/COBOL/FILE3.png)
+- ![FILE](./imgs/COBOL/FILE4.png)
+- ![FILE](./imgs/COBOL/FILE5.png)
+- ![FILE](./imgs/COBOL/FILE6.png)
