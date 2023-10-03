@@ -72,6 +72,11 @@
     4. Read, Write, Rewrite, Delete, Start, Read Next
         - PROCEDURE DIVISION
         - READ FILENAME -> one record from the dataset is copied into the file layout
+        - AT END 
+            - IMPERATIVE
+        - NOT AT END
+            - IMPERATIVE
+        - END-READ.
         - WRITE RECORD-NAME -> The values in the layout are moved into the file
         - DELETE FILENAME -> The matching record would be removed from the file
             - Not every file allows you to do every operation, this works with KSDS
