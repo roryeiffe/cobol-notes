@@ -70,3 +70,6 @@
 1. Describe the syntax of an if-statement in COBOL.
 1. Describe the syntax of an evaluate statement in COBOL.
 1. List and describe the 4 types of PERFORM statements. 
+1. What is a COPY statement?
+1. What is a COPY LIBRARY?
+1. List and describe the 6 steps when handling files (read/write) in a COBOL program?

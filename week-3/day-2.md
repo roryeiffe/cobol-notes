@@ -123,3 +123,20 @@
     - FLOW:
         - DATASET-READ-LAYOUT-PROCESS-AND-MOVE-TO-OUTPUT-LAYOUT-WRITE-DATASET
 ![READ-WRITE-DIAGRAM](../CLASS-CODE/imgs/COBOL/READ-WRITE-DIAGRAM.png)
+
+- Scenario 4 - 
+    - Read records from a PS and validate the same
+    - For the valid records, do the calculation and write it in a KSDS
+    - Organization is no longer sequential, it is now indexed
+    - Access is 
+    - KSDS - records must be written in ascending order
+    - If we can guarantee that the order of the incoming PS is sorted, we can use sequential access for the KSDS
+        - If records are coming random order, need to write random ACCESS
+
+- Handling KSDS in COBOL
+    1. Writing - Access can be sequential provided the inputs are in sorted order based on the key
+    2. Writing - Access can be random -> never mind the sequence of the records written
+    3. Reading - All records - access can be sequential
+    3. Reading/Deleting - By Key - access must be random
+    - New Clause - RECORD KEY IS TO001-ID
+        - Specify which variable is the key
