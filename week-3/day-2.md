@@ -80,3 +80,46 @@
     - Valid - failed -> display invalid
         - passes -> calculation -> display the record
         - Remember the virtual decimal point vs physical decimal point
+
+- Read records from PS
+- Validate the records
+    - Calculate the new salary
+    - Write the valid records into another PS
+1. Link
+    - Environment Division
+    - Input-Output Section
+    - File-Control
+        - SELECT TO001-PS ASSIGN TO DDNAME
+            - ORGANIZATION IS SEQUENTIAL
+            - ACCESS IS SEQUENTIAL
+            - FILE STATUS IS WS05-FST-TO001.
+2. 
+    - FD TO001-PS.
+        - 01 TO001-PS-REC.
+            - 05 TO001-ID       PIC 9(04).
+            - 05 FILLER         PIC X(01).
+            - 05 TO001-NAME     PIC A(05).
+            - 05 FILLER         PIC X(01).
+            - 05 TO001-LOC      PIC A(09).
+            - 05 FILLER         PIC X(01).
+            - 05 TO001-SAL      PIC 9(05).9(02).
+            - 05 FILLER         PIC X(01).
+            - 05 TO001-NEW-SAL  PIC 9(05).9(02).
+            - 05 FILLER         PIC X(41).
+3. OPEN
+    - OPEN INPUT TI001-PS
+        - ...
+    - OPEN OUTPUT TO001-PS
+            - IF(WS05-FST-TO001 = 0) THEN
+                - DISPLAY 'TO001 OPEN SUCCESS'
+            - ELSE
+                - DISPLAY 'TO001 OPEN FAILED: ' WS05-FST-TO001'.
+                - PERFORM 9000-TERM-PARA.
+            - END-IF
+4. READ -> VALID -> VAL -> WRITE
+    - WRITE -> PLACE THE VALUES IN THE OUTPUT LAYOUT THAT YOU ARE PLANNING TO WRITE (MOVE STATEMENTS)
+        - WRITE TI0001-PS-REC.
+    - EVERY FILE CAN ONLY HANDLE ITS LAYOUT
+    - FLOW:
+        - DATASET-READ-LAYOUT-PROCESS-AND-MOVE-TO-OUTPUT-LAYOUT-WRITE-DATASET
+![READ-WRITE-DIAGRAM](../CLASS-CODE/imgs/COBOL/READ-WRITE-DIAGRAM.png)

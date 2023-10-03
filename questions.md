@@ -64,3 +64,9 @@
 1. What is a group item?
 1. What is a member item?
 1. Explain how group items and member items are written and organized.
+1. What arithmetic operations are available in COBOL?
+1. Write some COBOL code to add/subtract/multiply/divide a number and a variable. 
+1. List and explain the different types of conditions we can check in COBOL.
+1. Describe the syntax of an if-statement in COBOL.
+1. Describe the syntax of an evaluate statement in COBOL.
+1. List and describe the 4 types of PERFORM statements. 

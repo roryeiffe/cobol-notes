@@ -181,4 +181,3 @@
                     - ADD 1 TO WS01-A
                 - END-PERFORM
             - Out-of-the-line
-    

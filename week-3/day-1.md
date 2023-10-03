@@ -141,7 +141,8 @@
             - EXIT
             - .
         - 3200-READ-PARA
-            - MOVE SPACES TO TI001-PS-REC     <--- EMPTY OUT THE RECORD FIRST
+            - MOVE SPACES TO TI001-PS-REC TO001-OS-REC    <--- EMPTY OUT THE RECORD FIRST
+            - MOVE 0 TO WS05-NEW-SAL
             - READ TI001-PS
             - EVALUATE TRUE
             - WHEN WS05-FS-TI001 = 00
