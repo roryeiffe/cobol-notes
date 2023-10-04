@@ -150,11 +150,40 @@
     - The values from the main program WILL ONLY BE AUTOMATICALLY MAPPED TO THE LINKAGE SECTION variables in the subprogram.
 - Types of Procedures:
     - Catalog - procedure is written somewhere else
-    - Instream - written in the same job where it is invoked
+    - In-Stream - written in the same job where it is invoked
 - Types of Sub-Programs:
     - Catalogued - subprogram is written in a different member
+        - Subprogram is written in a different member
+            1. Subprogram must have GOBACK instead of END PROGRAM
+            1. Compile the sub-program first
+            1. Compile the main program with a new ddname
+                - LKED.SYSLIB DD DSN=LOADLIB(SUBPGM),DISP=SHR
+            1. Run the main program
     - In-stream - the subprogram is written after the last statement of the main program in the same member
 - Linkage Section Variables:
     - Are not readily available to the procedure division
     - Because the linkage section variable lives somewhere in the common buffer area between the main program and the sub-program
     - To use the linkage variables in the procedure division, write the USING clause in the procedure division along with a list of variables in the exact same sequence 
+- Two ways of calling the sub-program:
+    1. Call by Reference
+        - By Default
+        - The calling program's variables and the called program's variables (linkage section) share the same memory. Changing its values by a sub-program is reflected in the main program. 
+    2. Call by Content
+        - The initial values are copied from the main program. But when those values are changed in the sub-program, it is not reflected in the main program. 
+        - The call by content variables have a different memory, hence the changes in the sub-program will not be reflected in the main
+    - Syntax:
+        - CALL 'SUBPGM' BY CONTENT USING WS05-A WS05-B
+        -               BY REFERENCE USING WS05-C.
+
+
+## Misc:
+- File status codes:
+    - 00 - success
+    - 10 - end of file
+    - 22 - duplicate key
+    - 23 - record not found
+    - 35 - An OPEN statement with the INPUT, I-O, or EXTEND phrase was attempted on a non-optional file that was unavailable.
+    - 39 - 	The OPEN statement was unsuccessful because a conflict was detected between the fixed file attributes and the attributes specified for that file in the program.
+- Reference: https://www.mainframestechhelp.com/tutorials/cobol/file-status-codes.htm
+- ABEND CODE S806
+    - Module does not exist

@@ -74,3 +74,9 @@
 1. What is a COPY statement?
 1. What is a COPY LIBRARY?
 1. List and describe the 6 steps when handling files (read/write) in a COBOL program?
+1. What kind of operations can we perform on a KSDS file in a COBOL program?
+1. What is the best type of access for these operations?
+1. What is a sub-program?
+1. How do we create an in-stream sub-program?
+1. How do we create a catalogued sub-program?
+1. What is the purpose of the linkage section?
