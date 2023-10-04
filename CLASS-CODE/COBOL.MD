@@ -87,8 +87,6 @@
 ##### COMPILE SUBPROGRAM
 - ![COMP SUB](./imgs/COBOL/SUBCOMPILE.png)
 ##### COMPILE MAINPROGRAM
-- *Note: Line 012 should be uncommented:*
-- Also remove null line 10
-- ![COMP MAIN](./imgs/COBOL/COMPJCL.png)
+- ![COMP MAIN](./imgs/COBOL/MAINCOMPILE.png)
 ##### BY REFERENCE VS BY CONTENT
 - ![REFCONTENT](./imgs//COBOL/REFERENCECONTENT.png)
