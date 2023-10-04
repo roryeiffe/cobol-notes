@@ -137,6 +137,6 @@
     1. Writing - Access can be sequential provided the inputs are in sorted order based on the key
     2. Writing - Access can be random -> never mind the sequence of the records written
     3. Reading - All records - access can be sequential
-    3. Reading/Deleting - By Key - access must be random
+    4. Reading/Deleting - By Key - access must be random
     - New Clause - RECORD KEY IS TO001-ID
         - Specify which variable is the key

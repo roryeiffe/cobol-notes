@@ -1,0 +1,141 @@
+## Recap
+- If the requirement demands reading all the records from the KSDS (from the first to the last), then the access can be sequential
+- When writing KSDS, access should be random, random is better choice
+    - Can write sequential but you must promise that input is in sorted order
+- If you want to read a matching record, delete a matching record, modify a matching record in the KSDS, then the access must be random
+
+## Files (Continued)
+- Reading, Modifying, and Deleting records in a KSDS
+    - Can only be done in KSDS
+### Delete
+- Keep the key value in the key variable
+- Example, if you want to delete record with key 9909
+    - Then, you must move this value to the key variable
+    - Remember in the environment division, RECORD KEY IS VAR-NAME
+    - ex: MOVE 9909 TO TI002-ID
+- DELETE FILENAME.
+- EVALUATE TRUE
+- WHEN WS05-FST-TI002 = 00
+    - DISPLAY 'DELETED'
+- WHEN OTHER
+    - DISPLAY 'DELETE FAILED ' TI002-ID
+    - DISPLAY WS05-FS-TI002
+- END-EVALUATE
+### READ
+- Keep the key value in the key variable
+- Example, if you want to read record with key 9909
+    - Then, you must move this value to the key variable
+    - Remember in the environment division, RECORD KEY IS VAR-NAME
+    - ex: MOVE 9909 TO TI002-ID
+- READ FILENAME.
+- EVALUATE TRUE
+- WHEN WS05-FST-TI002 = 00
+    - DISPLAY 'RECORD FOUND IN KSDS'
+    - DISPLAY TI002-KSDS-REC
+- WHEN OTHER
+    - DISPLAY 'MATCHING RECORD READ FAILED ' TI002-ID
+    - DISPLAY WS05-FS-TI002
+- END-EVALUATE
+
+### MODIFY
+- Keep the key value in the key variable
+- Example, if you want to read record with key 9909
+    - Then, you must move this value to the key variable
+    - Remember in the environment division, RECORD KEY IS VAR-NAME
+    - ex: MOVE 9909 TO TI002-ID
+1. READ -> SUCCESSFUL -> DO THE CHANGES TO THE COLUMNS THAT YOU WANT TO MODIFY -> REWRITE RECORDNAME
+
+- READ FILENAME.
+- EVALUATE TRUE
+- WHEN WS05-FST-TI002 = 00
+    - DISPLAY 'RECORD FOUND IN KSDS'
+    - DISPLAY TI002-KSDS-REC
+- WHEN OTHER
+    - DISPLAY 'MATCHING RECORD READ FAILED ' TI002-ID
+    - DISPLAY WS05-FS-TI002
+- END-EVALUATE
+
+
+- Logical File Name -> Name that you give in the select statement when you assign the DDName
+    - We give this name in the environment division
+    - It is a logical name, we give it a name so we can remember what it stands for, KSDS, PS, Input, Output etc.
+    - INPUT-OUTPUT SECTION
+    - FILE-CONTROL
+        - SELECT TI001-PS ASSIGN DDNAME
+- Record Name
+- DATA DIVISION
+- FILE SECTION
+- FD MI01-PS
+- 01 MI01-PS-REC
+    - 05 MI01-ID
+
+
+- Scenario 5 -
+- HLQ.RORY.REVAT.COBOL.KSDS -> DATABASE
+    - ID PIC 9(04), NAME PIC A(05) LOC PIC A(09) SAL PIC 9(05).9(02)
+        - 1 filler between fields
+- Transaction File:
+    - HLQ.RORY.OPRTN.PS
+    - ID PIC 9(04) F OPRTN PIC A(01) FILLERS
+    - 1002 D
+    - 1234 R
+    - 3456 D
+    - 7987 M
+    - 5676 Z
+    - 8987 M
+- Requirement
+    - Sweep all the records from PS and perform the operations on KSDS.
+        - Evalute True
+        - When the operation is D
+            - Delete the matching record
+        - When the operation is M
+            - Read -> do the changes to te columns -> rewrite
+            - Modify the matching record
+                - Change the location -> New Jersy
+                - Change the salary -> increased by 10%
+        - When the operation is R
+            - Read the matching record and display the same in the spool
+        - When Other
+            - Display 'invalid operation'
+        - End-Evaluate
+- Analysis
+    - PS SELECT TI001-PS ASSIGN TO DD1
+        - Access is Sequential
+        - Organization is Sequential
+        - Declare a variable for File status: WS05-FST-TI001
+    - SELECT DB01-KSDS ASSIGN TO DD2
+        - ACCESS IS RANDOM
+        - ORGANIZATION IS INDEXED
+        - RECORD KEY IS DB01-ID
+        - FILE STATUS IS WS05-FST-DB01
+- OPEN INPUT TI001-PS
+- OPEN I-O DB01-KSDS
+- DATA FLOW:
+- PD
+
+- 3000-PROC-PARA.
+    - OPEN-PARA
+    - READ-PS-PARA UNTIL EOF
+    - CLOSE-PARA
+- 3000-PROC-PARA-EXIT.
+    - EXIT
+    - .
+- READ -> BRANCH-PARA .
+    - -> D -> DELETE PARA
+    - -> R -> READ PARA
+    - -> M -> MODIFY PARA
+    - OTHER -> DISPLAY 'INVALID'
+- BRANCH-PARA.
+    - EVALUATE TRUE
+    - WHEN TI001-OPRTN = 'D'
+        - PERFORM 3211-DELETE-PARA
+            - THRU 3211-DELETE-PARA-EXIT
+    - WHEN TI001-OPRTN = 'R'
+        - PERFORM 3211-READ-PARA
+            - THRU 3211-READ-PARA-EXIT
+    - WHEN TI001-OPRTN = 'M'
+        - PERFORM 3211-MODIFY-PARA
+            - THRU 3211-MODIFY-PARA-EXIT
+    - WHEN OTHER 
+        - DISPLAY 'INVALID OPERATION' TI001-OPRTN.
+    - END-EVALUATE
