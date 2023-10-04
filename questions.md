@@ -69,6 +69,7 @@
 1. List and explain the different types of conditions we can check in COBOL.
 1. Describe the syntax of an if-statement in COBOL.
 1. Describe the syntax of an evaluate statement in COBOL.
+### The following Topics should not be covered on 10/5 QC:
 1. List and describe the 4 types of PERFORM statements. 
 1. What is a COPY statement?
 1. What is a COPY LIBRARY?

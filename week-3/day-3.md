@@ -139,3 +139,22 @@
     - WHEN OTHER 
         - DISPLAY 'INVALID OPERATION' TI001-OPRTN.
     - END-EVALUATE
+
+
+## SUB-PROGRAM
+- Remember, procedure is a set of repeatable steps that we can invoke in a job
+- A sub-program is a reusable program that can be called from any program
+- A sub-program MUST NOT HAVE STOP RUN but it can have GOBACK, END PROGRAM
+    - If there is a STOP RUN in the sub-program, the control will never return to the calling program
+    - If values are to be received and sent from and to the sub program LINKAGE SECTION must be defined in the sub-program
+    - The values from the main program WILL ONLY BE AUTOMATICALLY MAPPED TO THE LINKAGE SECTION variables in the subprogram.
+- Types of Procedures:
+    - Catalog - procedure is written somewhere else
+    - Instream - written in the same job where it is invoked
+- Types of Sub-Programs:
+    - Catalogued - subprogram is written in a different member
+    - In-stream - the subprogram is written after the last statement of the main program in the same member
+- Linkage Section Variables:
+    - Are not readily available to the procedure division
+    - Because the linkage section variable lives somewhere in the common buffer area between the main program and the sub-program
+    - To use the linkage variables in the procedure division, write the USING clause in the procedure division along with a list of variables in the exact same sequence 
