@@ -7,7 +7,7 @@
 - ![FIRST PROGRAM](./imgs/COBOL/FIRSTPGM.png)
 
 ### DATA DIVISION
-- ![DATA](./IMGS/COBOL/DATA.png)
+- ![DATA](./imgs/COBOL/DATA.png)
 #### With stars:
 - ![STARS](./imgs/COBOL/STARS.png)
 
