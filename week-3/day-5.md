@@ -114,4 +114,33 @@
 
 ## Assignment Assistance
 - Applications Program - Cooking Data for the output file
-- Read from a PS -> Validations -> Calculations
+- Read from a PS -> Validations  -> fails write error file
+    - Valid records do the calculations
+    - Calculations
+    - After Calculation
+        1. KSDS Write
+        2. Move it to Array
+            - WORKING-STORAGE SECTION
+            - WS01-VARS
+                - 05 ARRAY-REC OCCURS 20 TIMES
+                    - 10 ARRAY-NOM-ID
+                    - 10 ARRAY-DOB
+                    - 10 ARRAY-NOM-REL
+                    - 10 ARRAY-INC
+                    - 10 ARRAY-CLM-ELG
+                - 05 WS05-SUBSCRIPT PIC 9(02) VALUE 0.
+            - MOVE-TO-ARRAY-PARA.
+                - ADD 1 TO WS05-SUBSCRIPT
+                - MOVE TI001-ID TO ARRAY-NOM-ID(WS05-SUBSCRIPT)
+                - MOVE TI001-DOB TO ARRAY-DOB(WS05-SUBSCRIPT)
+        3. Branch split records and write them in 2 different datasets:
+            - EVALUATE TRUE
+                - WHEN ARRAY-CLM-ELG(WS05-SUBSCRIPT) = 'N'
+                    - PERFORM 4322-NOT-ELIG-WRITE-PARA
+                    -   THRU 4322-NOT-ELIG-WRITE-PARA-EXIT.
+                - WHEN ARRAY-CLM-ELG(WS05-SUBSCRIPT) = 'Y'
+                    - PERFORM 4322-ELIG-WRITE-PARA
+                    -   THRU 4322-ELIG-WRITE-PARA-EXIT.
+                - END-EVALUATE
+            - Elig.ps
+            - Nlg.ps
