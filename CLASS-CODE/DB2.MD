@@ -1,0 +1,7 @@
+### SQL
+#### CREATE
+- ![CREATE1](./imgs/DB2/SQL/CREATE1.png)
+#### CREATE INDEX
+- ![CREATE INDEX 1](./imgs/DB2/SQL/CREATE_INDEX1.png)
+#### INSERT
+- ![INSERT](./imgs/DB2/SQL/INSERT1.png)
