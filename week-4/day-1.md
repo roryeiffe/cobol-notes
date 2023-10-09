@@ -206,3 +206,50 @@
             - CREATE UNIQUE INDEX IDX9 ON TABLENAME(COLUMN-NAME)
 - C ALL ' ' '-' 1 2
     - Changes all spaces to columns in columns 1 and 2
+
+### Referential Integrity
+- TB_DEPT
+- DID   HOD   DNAME
+- D001
+- D002
+- D003
+- D004
+- D005
+- D006
+
+- TB_EMPLOYEE
+- EID         ENAME            DID         SALARY         DOJ          GENDER
+- CHAR(04)    VARCHAR(15)      CHAR(04)    DECIMAL(7,2)   DATE         CHAR(1) M,F,O
+- E001        TOMMY            D009        12345.67       2001-01-01   
+    - There is an issue with this record, because department D009 does not exist
+    - Before inserting, we'd like to check if the department id does exist before actually making the change
+- Referential Constraint - building relationship between tables
+    - Define child table - table that has FOREIGN KEY
+- If the value does not exist in parent, it cannot exist in child
+- Not all values that the parent has, must the child have
+    - Parent can have multiple values not utilised by the child
+- What happens if we delete department D001
+    - What would happen to the employees from that department? (ON DELETE RULES)
+        - Can close department and terminate (ON DELETE CASCADE)
+        - Can close department and put them on bench (no projects assigned) (ON DELETE SET NULL)
+        - Don't allow the department to close if there is at least 1 person in department (ON DELETE RESTRICT)
+- When an INSERT SQL statement is executed on the child table, the referential constraint will check if the value (being inserted in the child table) is in the parent table
+    - If it is there, then the insertion is allowed in the child table
+    - If not, the insertion is rejected
+- When a DELETE SQL statement is performed on the parent table
+    - ON DELETE rules are activated
+        - CASCADE - allow deletion in the parent table and delete all the depending records from the child table
+        - SET NULL - allow deletion from the PT and set NULL value to the depending records' foreign key column in the child table
+        - REJECT - do not allow deletion if there are at least 1 depending record in the child table
+- If a table has a column that refers to another table, it is a child table
+#### Quick note on Decimals
+- DECIMAL(X,Y)
+- X -> TOTAL NUMBER OF DIGITS
+- Y -> AFTER DECIMAL POINT
+
+
+### Error Codes
+- -181 - not a valid datetime value
+- -530 - index violation
+- -545 - row does not satisfy check constraint
+- -532 - relationship DNO restricts the deletion
