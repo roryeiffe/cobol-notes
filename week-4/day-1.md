@@ -206,6 +206,29 @@
             - CREATE UNIQUE INDEX IDX9 ON TABLENAME(COLUMN-NAME)
 - C ALL ' ' '-' 1 2
     - Changes all spaces to columns in columns 1 and 2
+#### DML
+- Insert
+    - INSERT INTO TABLENAME VALUES (VAL1,VAL2,VAL3);
+- Update
+    - UPDATE TABLENAME SET COLUMNNAME=VALUE/EXPRESSION, COLUMN2=VALUE2/EXPRESSION2;
+- Delete
+    - DELETE FROM TABLENAME;
+        - this statement will remove all records from the table (no WHERE clause)
+- SELECT
+    - SELECT COL1, COL2, COL3 FROM TABLENAME;
+        - this statement will select all records from the table (no WHERE clause)
+##### The "WHERE" clause
+- Helps us to focus/specify what we are looking for
+- Can use with UPDATE, DELETE, SELECT
+- Operators
+    - BETWEEN
+    - LIKE
+    - IS NULL
+    - IS NOT NULL
+    - RELATIONAL OPERATORS (<, >, =, <=, >=)
+    - IN
+    - LOGICAL OPERATORS (AND, OR NOT)
+
 
 ### Referential Integrity
 - TB_DEPT
