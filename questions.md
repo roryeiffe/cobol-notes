@@ -69,7 +69,6 @@
 1. List and explain the different types of conditions we can check in COBOL.
 1. Describe the syntax of an if-statement in COBOL.
 1. Describe the syntax of an evaluate statement in COBOL.
-### The following Topics should not be covered on 10/5 QC:
 1. List and describe the 4 types of PERFORM statements. 
 1. What is a COPY statement?
 1. What is a COPY LIBRARY?
@@ -80,3 +79,49 @@
 1. How do we create an in-stream sub-program?
 1. How do we create a catalogued sub-program?
 1. What is the purpose of the linkage section?
+1. How do we modify a record in a KSDS using COBOL?
+1. How do we delete a record in a KSDS using COBOL?
+1. How do we create an array in COBOL?
+1. What is a simple array?
+1. What is an indexed array?
+1. What are the 2 main types of searching arrays in COBOL?
+1. What is the difference between Search and Search All?
+1. What conditions must be met in order to perform a search using the Search function?
+1. What conditions must be met in order to perform a search using the Search All function?
+1. What is a manual search?
+1. How do we use the SET command when working with arrays?
+1. How do we create a multi-dimensional array?
+1. How do concatenate strings in COBOL?
+1. What is the DELIMITED BY clause used for in the STRING function?
+1. What is the WITH POINTER clause user for?
+1. What is the USAGE clause used for in the STRING function?
+1. How do we split a string into multiple sub-strings?
+1. What is a condition name in COBOL?
+1. List and define some COBOL intrinsic functions.
+1. What is an Edited Picture clause?
+1. What do Z, B, 0, CR/DB, $ all stand for when dealing with Edited Picture clauses?
+
+## DB2
+- What is DB2? What does it stand for?
+- What is normalization?
+- What is denormalization?
+- What is an RDBMS?
+- What is a Database?
+- What is a table?
+- What is a record?
+- What is an entity?
+- List and explain the data types of SQL (at least the main categories and some common examples of each)
+- What are some constraints we can play on a column?
+- What is a primary key?
+- What is a foreign key?
+- What is referential integrity? Give an example.
+- What are the ON DELETE rules?
+- What is a Tablespace?
+- What is a Buffer Spool?
+- What is SQL?
+- What is SPUFI? Why is it useful?
+- What is DDL? What commands fall under it?
+- What is DML? What commands fall under it?
+- What is TCL? What commands fall under it?
+- What is DCL? What commands fall under it?
+- What is the WHERE clause? Which operators can we use with it?
