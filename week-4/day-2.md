@@ -88,5 +88,5 @@
         - SELECT MAX(SAL) FROM EMP WHERE SAL < (SELECT MAX(SAL) FROM EMP where sal < (SELECT MAX(SAL) FROM EMP));
     - Now, get all the data about that employee:
         - SELECT ENAME, EID, SAL FROM EMP WHERE SAL = (SELECT MAX(SAL) FROM EMP WHERE SAL < (SELECT MAX(SAL) FROM EMP where sal < (SELECT MAX(SAL) FROM EMP)));
-#### Joins
-#### Unions
+
+### Embedded SQL

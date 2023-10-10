@@ -101,7 +101,7 @@
 1. What is an Edited Picture clause?
 1. What do Z, B, 0, CR/DB, $ all stand for when dealing with Edited Picture clauses?
 
-## DB2
+## DB2/SQL
 1. What is DB2? What does it stand for?
 1. What is a Tablespace?
 1. What is a Buffer Spool?
@@ -124,6 +124,8 @@
 1. What is DML? What commands fall under it?
 1. What is TCL? What commands fall under it?
 1. What is DCL? What commands fall under it?
+1. What is the GRANT command?
+1. What is the REVOKE command?
 1. What is the WHERE clause? Which operators can we use with it?
 1. What is an aggregate function?
 1. List and define some arithmetic functions in SQL.
@@ -138,3 +140,13 @@
     1. Left Outer
     1. Right Outer
 1. What is a set operation?
+1. What are DB2 Privileges?
+1. What are implicit/explicit privileges?
+1. What are DB2 utilities?
+1. What is a View?
+1. What are locks?
+1. What are the different modes of locking?
+1. Why do we need locking?
+1. Explain isolation levels.
+1. What are the different types of reads? Explain them.
+1. What are active and archive logs?
