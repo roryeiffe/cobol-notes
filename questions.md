@@ -102,26 +102,30 @@
 1. What do Z, B, 0, CR/DB, $ all stand for when dealing with Edited Picture clauses?
 
 ## DB2
-- What is DB2? What does it stand for?
-- What is normalization?
-- What is denormalization?
-- What is an RDBMS?
-- What is a Database?
-- What is a table?
-- What is a record?
-- What is an entity?
-- List and explain the data types of SQL (at least the main categories and some common examples of each)
-- What are some constraints we can play on a column?
-- What is a primary key?
-- What is a foreign key?
-- What is referential integrity? Give an example.
-- What are the ON DELETE rules?
-- What is a Tablespace?
-- What is a Buffer Spool?
-- What is SQL?
-- What is SPUFI? Why is it useful?
-- What is DDL? What commands fall under it?
-- What is DML? What commands fall under it?
-- What is TCL? What commands fall under it?
-- What is DCL? What commands fall under it?
-- What is the WHERE clause? Which operators can we use with it?
+1. What is DB2? What does it stand for?
+1. What is a Tablespace?
+1. What is a Buffer Spool?
+1. What is SPUFI? Why is it useful?
+1. What is normalization?
+1. What is de-normalization?
+1. What is an RDBMS?
+1. What is a Database?
+1. What is a table?
+1. What is a record?
+1. What is an entity?
+1. List and explain the data types of SQL (at least the main categories and some common examples of each)
+1. What are some constraints we can play on a column?
+1. What is a primary key?
+1. What is a foreign key?
+1. What is referential integrity? Give an example.
+1. What are the ON DELETE rules?
+1. What is SQL?
+1. What is DDL? What commands fall under it?
+1. What is DML? What commands fall under it?
+1. What is TCL? What commands fall under it?
+1. What is DCL? What commands fall under it?
+1. What is the WHERE clause? Which operators can we use with it?
+1. What is an aggregate function?
+1. List and define some arithmetic functions in SQL.
+1. What is a scalar function?
+1. List and define some scalar functions in SQL. 

@@ -276,3 +276,6 @@
 - -530 - index violation
 - -545 - row does not satisfy check constraint
 - -532 - relationship DNO restricts the deletion
+- -122 - column or expression in the select list is not valid
+    - When using the GROUP BY clause, you must use a function
+    - No other columns can be selected apart from the columns that are involved in the GROUP BY clause and the columns involved in the function
