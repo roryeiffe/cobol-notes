@@ -129,3 +129,12 @@
 1. List and define some arithmetic functions in SQL.
 1. What is a scalar function?
 1. List and define some scalar functions in SQL. 
+1. What are the three types of Complex Queries?
+1. What is a correlated sub-query?
+1. What is a non-correlated sub-query?
+1. List and compare/contrast the different kinds of joines:
+    1. Inner
+    1. Full Outer
+    1. Left Outer
+    1. Right Outer
+1. What is a set operation?

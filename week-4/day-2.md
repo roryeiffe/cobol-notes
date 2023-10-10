@@ -62,13 +62,19 @@
     - Information that is from Employee and Department number
     - Where do we make this connection?
     - Find Department number from employee table and then finding HOD from department table
-#### Sub Queries (15 levels)
+#### Sub Queries 
 - Nested SELECT statement
 - A Query inside a query
 - Specified using the IN predicate, equality, comparative operators
 - Nested Loop
 - The known value query must be the inner query
 - The expected columns should be the outer query
+
+##### Correlated
+- Top-Bottom
+##### Non-Correlated
+- 16 levels
+- Bottom-Up
 - ex: 
     - PROJ DETAILS?
     - KNOWN ? NAME
@@ -82,8 +88,5 @@
         - SELECT MAX(SAL) FROM EMP WHERE SAL < (SELECT MAX(SAL) FROM EMP where sal < (SELECT MAX(SAL) FROM EMP));
     - Now, get all the data about that employee:
         - SELECT ENAME, EID, SAL FROM EMP WHERE SAL = (SELECT MAX(SAL) FROM EMP WHERE SAL < (SELECT MAX(SAL) FROM EMP where sal < (SELECT MAX(SAL) FROM EMP)));
-##### Correlated
-
-##### Non-Correlated
 #### Joins
 #### Unions
