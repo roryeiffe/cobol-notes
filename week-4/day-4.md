@@ -1,0 +1,65 @@
+### Cursors
+1. Declare (working-storage section)
+    - a name for the cursor is given
+    - Declared for a select statement(complex SQL too)
+    - EXEC SQL
+        - DECLARE CURNAME CURSOR
+        - FOR <SELECT>
+    - END-EXEC
+2. Open (PROCEDURE DIVISION, OPEN-PARA)
+    - EXEC SQL
+        - OPEN CURNAME
+    - END-EXEC
+    - EVALUATE TRUE
+    - WHEN SQLCODE = 0
+        - DISPLAY 'CURSOR OPENED'
+    - WHEN OTHER
+        - DISPLAY 'CURSOR OPEN FAILED'
+        - CALL 'DSNTIAR' USING SQLCA WS05-ERR-MSG WS05-ERR-LRECL
+        - DISPLAY WS05-ERR-MSG
+        - PERFORM 9000-TERM-PARA
+    - END-EVALUATE.
+    - Note: * the select statement mentioned in the cursor will be executed
+    - A result table (RT) is built in the buffer space: Temporary table
+    - The structure of the RT is the columns that are selected in the SELECT statement mentioned in the declaration of the cursor
+    - All the records that gushes out are captured into this RT
+    - A pointer is positioned at the first record in the RT
+    - Now, the RT is ready to be treated with sequential access
+3. Fetch until SQLCODE= +100 (PROCEDURE DIVISION, FETCH-PARA)
+    - EXEC SQL
+        - FETCH CURNAME
+        - INTO 
+            - :HV1
+            - ,:HV2 :NULL INDICATOR
+    - END-EXEC.
+    - EVLUATE TRUE 
+    - WHEN SQLCODE=000
+        - DISPLAY DCLTB-COB-EMP
+        - IF NULL-IND = 0 AND NULL-HV2 = 0 THEN
+            - PERFORM 3210-WRITE-PARA
+                - THRU 3210-WRITE-PARA-EXIT
+        - ELSE
+            - DISPLAY 'NULL VALUE IN THE RECORD'
+        - END-IF
+    - WHEN SQLCODE = +100
+        - DISPLAY 'ALL RECORDS PROCESSED'
+    - WHEN OTHER
+        - DISPLAY 'CURSOR FETCH FAILED'
+    - END-EVALUATE
+4. Close (PROCEDURE DIVISION, CLOSE-PARA)
+    - EXEC SQL
+        - CLOSE CURNAME
+    - END-EXEC
+
+- PROGRAM STRUCTURE:
+    - 3000-PROC-PARA.
+        - PERFORM 3100-OPEN-PARA
+            - THRU 3200-OPEN-PARA-EXIT
+        - PERFORM 3200-FETCH-PARA
+            - THRU 3200-FETCH-PARA-EXIT
+            - UNTIL SQLCODE = +100
+        - PERFORM 3300-CLOSE-PARA
+            - THRU 330-CLOSE-PARA-EXIT
+        - 
+- If field has a null value, null indicator will be -1 or -2
+- If field has valid value, null indicator will be 0

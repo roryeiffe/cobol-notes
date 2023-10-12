@@ -150,3 +150,9 @@
 1. Explain isolation levels.
 1. What are the different types of reads? Explain them.
 1. What are active and archive logs?
+1. What is embedded SQL?
+1. What is a host variable?
+1. What is DCLGEN?
+1. What is SQLCA?
+1. How do we include SQL code in a COBOL program? What is the syntax?
+1. Explain how we can write an insert statement in a COBOL program. 
