@@ -135,3 +135,25 @@
         3. GDG-BASE-NAME(0) -> Refers to recent current member
         4. GDG-BASE-NAME(-1) -> Previous members
         
+### Load Library Instructions:
+Create a pds
+
+    HLQ.URNAME.REVAT.COBOL.PDS
+
+              LRECL=80,RECFM=FB,,DSORG=PDS
+
+              PQ=10,SQ=10,DB=10,
+
+Create a member à compjclà type the job mentioned in the chat
+
+Create another à RUNJCL à type the next job mentioned in the chat.
+
+ 
+
+CREATE A LIBRARY
+
+HLQ.URNAME.REVAT.COBOL.LOADLIB
+
+              LRECL=80,RECFM=U,DSORG=LIBRARY
+
+              PQ=10,SQ=10,DB=10
