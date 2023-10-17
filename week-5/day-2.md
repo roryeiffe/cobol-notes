@@ -154,7 +154,7 @@
     - ex: NAME ARI001P(R)
 - sAVE AND SUBMIT PROGRAM
 
-### CICS
+### CICS (RUNNING A CICS PROGRAM)
 - CEMT SET PROG (ARI001P) NE
     - Should get normal
     - Press F3 once
@@ -162,4 +162,37 @@
     - Enter Trans ID and hit enter
         - ex: AR15
     - Should see output
+
+#### SEND COMMAND:
+- https://www.ibm.com/docs/en/cics-ts/5.6?topic=summary-send-3270-logical
     
+### ABEND ARRORS
+- AEIV - Length error
+
+### Accept
+- In COBOL Run
+    - SYSIN DD *, pass in "Tommy" for example
+    - In the COBOL program, we can ACCEPT that value
+
+### Exceptional Condition
+- An abnormal situation during execution of a command in CICS
+
+### Error Handling Methods
+- Take no action and let the program continue
+- Pass control to a specified label
+- Rely on the system default action
+
+### Exception Handling Methods
+- HANDLE CONDITION
+- NOHANDLE
+- IGNORE
+- RESP
+- PUSH AND POP
+
+#### HANDLE CONDITION
+- EXEC CICS HANDLE CONDITION
+    - ERROR(ERR-HANDLE-PARA)
+    - LENGERR(LEN-ERR-HANDLE-PARA)
+    - DUPREC(DUP-REC-PARA)
+- END-EXEC
+- [CICS Conditions](https://www.ibm.com/docs/en/cics-tx/10.1.0?topic=reference-cics-conditions)
