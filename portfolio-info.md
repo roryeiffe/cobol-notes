@@ -25,6 +25,18 @@
 
 ### Sample Skill Matrix
 #### Don't need these exactly but they are here to provide inspiration:
+
+#### COBOL
+- COBOL Structure
+- COBOL Syntax
+- COBOL Functions
+- Managing Data
+- Interacting with Files
+	- Reading
+	- Writing
+- COBOL Arrays
+- COBOL Sub-Programs
+
 #### JCL
 - Writing Job Statements
 - IEBGENER
@@ -40,17 +52,6 @@
 - ESDS
 - RRDS
 - REPRO
-
-#### COBOL
-- COBOL Structure
-- COBOL Syntax
-- COBOL Functions
-- Managing Data
-- Interacting with Files
-	- Reading
-	- Writing
-- COBOL Arrays
-- COBOL Sub-Programs
 
 #### DB2
 - Embedded SQL
