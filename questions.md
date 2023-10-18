@@ -156,3 +156,37 @@
 1. What is SQLCA?
 1. How do we include SQL code in a COBOL program? What is the syntax?
 1. Explain how we can write an insert statement in a COBOL program. 
+
+## CICS
+1. What is CICS? What does it stand for?
+1. Explain the difference between batch and online systems.
+1. List some tasks that CICS is capable of.
+1. What are the CICS System Components? Elaborate on/explain them
+    1. Data-Communication Functions
+    1. Data Handling Functions
+    1. Application Program Services
+    1. System Services
+    1. Monitoring Functions
+1. Define multitasking
+1. Define multithreading
+1. Define quasi-reentrancy
+1. Define application, transaction, and task
+1. Define the following and list the associated control programs and control tables:
+    1. Terminal Management
+    1. Program Management
+    1. Storage Management
+    1. Task Management
+    1. File Management
+1. List and define some of the native CICS commands.
+1. What is the format of writing a CICS command in a COBOL program?
+1. Define and describe the SEND command.
+1. Define and describe the RECEIVE command
+1. What does the SEND PAGE command do?
+1. What is an exceptional condition?
+1. What some different error handling methods?
+1. List and describe the following Exception Handling Methods
+    1. HANDLE CONDITION
+    1. NOHANDLE
+    1. IGNORE
+    1. RESP
+    1. PUSH & POP
