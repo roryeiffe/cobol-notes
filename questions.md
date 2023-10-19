@@ -190,3 +190,14 @@
     1. IGNORE
     1. RESP
     1. PUSH & POP
+1. What is Handle AID?
+1. What is EIB?
+1. What is BMS?
+1. What is a map? What is a mapset?
+1. What are the functions of BMS?
+1. List and explain some Map Definition Macros
+    1. DFHMSD
+    1. DFHMDI
+    1. DFHMDF
+1. What are Skipper and Stopper techniques?
+1. Define Send Map and Receive Map.
