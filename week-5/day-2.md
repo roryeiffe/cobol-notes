@@ -132,11 +132,11 @@
     - TYPE: INTRA
 #### FIELDS:
 - Program name   : USERIDP
-- TRANSID              : FIRST 2 CHARS AND LAST 2 CHARS( ARI001 à AR01)
-- FILE NAME          : USERIDF
-- MAPNAME          :USERID
-- DB2 ENTRY         : USERIDP
-- TDQ                      : TD and last 2 char of your userid
+- TRANSID              : FIRST 2 CHARS AND LAST 2 CHARS( ARI001 à AR01) EX: AR01
+- FILE NAME          : USERIDF EX: ARI001F
+- MAPNAME          :USERID EX: ARI001
+- DB2 ENTRY         : USERIDP EX: ARI001P
+- TDQ                      : TD and last 2 char of your userid EX: TD01
 ####
 - CEDA DISPLAY
 - Enter group name ALWYNGP
