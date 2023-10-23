@@ -33,8 +33,8 @@
 - MOVE '1090' TO FILE-ID.
 - EXEC CICS
     - READ
-    - FILE(ARIO14F)
-    - INTO ('WS05-REC')
+    - FILE('ARIO14F')
+    - INTO (WS05-REC)
     - RIDFLD(FILE-ID)
     - RESP(WS-RESP)
 - END-EXEC.
@@ -73,8 +73,8 @@ PROCEDURE DIVISION.
                MOVE ‘1090’  TO FILE-ID. 
     EXEC CICS
                READ
-               FILE(ARI014F)
-               INTO('WS05-RECORD')
+               FILE('ARI014F')
+               INTO(WS05-RECORD)
                RIDFLD(FILE-ID)
                RESP(WS-RESP)
 END-EXEC.
@@ -92,4 +92,7 @@ EXEC CICS SEND
                                ERASE
                END-EXEC
 END-EVALUATE.
+EXEC CICS
+    RETURN
+END-EXEC.
 ```
