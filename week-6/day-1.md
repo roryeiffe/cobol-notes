@@ -34,7 +34,7 @@
 - EXEC CICS
     - READ
     - FILE(ARIO14F)
-    - INTO (WS05-REC)
+    - INTO ('WS05-REC')
     - RIDFLD(FILE-ID)
     - RESP(WS-RESP)
 - END-EXEC.
@@ -74,7 +74,7 @@ PROCEDURE DIVISION.
     EXEC CICS
                READ
                FILE(ARI014F)
-               INTO(WS05-RECORD)
+               INTO('WS05-RECORD')
                RIDFLD(FILE-ID)
                RESP(WS-RESP)
 END-EXEC.
