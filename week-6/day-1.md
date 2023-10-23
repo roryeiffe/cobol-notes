@@ -51,3 +51,45 @@
         - FROM (WS05-RECORD)
         - ERASE
     - END-EXEC
+
+#### Alwyn
+Read a random record and send it as a text to the cics region.
+ 
+```
+Data division.
+Working storage section.
+01 ws01-vars.
+** layout of the ksds
+               05 Ws05-record.
+                               10 file-id                              pic x(04).
+                               10 f                                        pic x(01).
+                               10 file-NAME                     pic x(04).
+                               10 f                                        pic x(01).
+                                               10 FILE-LOC
+                                               10 FILLER                             PIC X(53).
+                               05 WS-RESP                                        PIC .
+ 
+PROCEDURE DIVISION.
+               MOVE ‘1090’  TO FILE-ID. 
+    EXEC CICS
+               READ
+               FILE(ARI014F)
+               INTO(WS05-RECORD)
+               RIDFLD(FILE-ID)
+               RESP(WS-RESP)
+END-EXEC.
+EVALUATE TRUE
+WHEN WS-RESP=DFHREP(NORMAL)
+               EXEC CICS SEND
+                               FROM( WS05-RECORD)
+                               ERASE
+               END-EXEC
+WHEN WS-RESP=DFHREP(NOTFND)
+               MOVE SPACES TO WS05-RECORD
+               MOVE ‘ THE RECORD IS NOT FOUND IN THE KSDS’ TO WS05-RECORD
+EXEC CICS SEND
+                               FROM( WS05-RECORD)
+                               ERASE
+               END-EXEC
+END-EVALUATE.
+```
