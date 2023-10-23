@@ -96,3 +96,9 @@ EXEC CICS
     RETURN
 END-EXEC.
 ```
+
+### AEIP ABEND CODE FIX:
+1. On CICS, enter the command CEMT SET FILE(ARI001F) DSN(PATH OF YOUR CLUSTER)
+2. Close the file and add the following attributes next to 
+- ![fix](../CLASS-CODE/imgs/CICS/AEIP-FIX.png)
+3. Don't forget to open the file and then try running the program again
