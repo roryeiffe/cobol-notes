@@ -201,7 +201,61 @@
     1. DFHMDF
 1. What are Skipper and Stopper techniques?
 1. Define Send Map and Receive Map.
-
+1. What are the different types of VSAM Datasets used in CICS?
+1. In what ways can we interact with files using CICS?
+1. Recap the process for handling files in a COBOL program. How does this differ from handling file in a CICS program?
+1. What is FCT?
+1. Define the following keywords:
+    1. Dataset/File
+    1. Into/From
+    1. RIDFLD
+    1. RESP
+    1. LENGTH
+1. Explain how to perform the following processes in a CICS program?
+    1. Random Read
+    1. Sequential Read
+    1. Write
+    1. Rewrite
+    1. Delete
+1. Explain the following CICS commands:
+    1. STARTBR
+    1. READNEXT/READPREV
+    1. ENDBR
+    1. RESETBR
+1. What is VSAM?
+1. What are the types of VSAM files?
+1. What are the operations that can be done on 
+file?
+1. Name some of the file commands of CICS?
+1. How is random access done in KSDS file?
+1. What are the commands for sequential access?
+1. How is sequential access of ESDS done?
+1. Describe the following CICS commands:
+    1. ASKTIME
+    1. FORMATTIME
+    1. DELAY
+    1. START
+1. Briefly describe the following commands
+    1. POST
+    1. WAIT EVENT
+    1. RETRIEVE
+    1. CANCEL
+    1. SUSPEND
+    1. ENQ
+1. List and differentiate between the different types of Terminal Conversations
+1. What is Transient Data Control?
+1. What is the difference between Intra-Partitioned and Extra-Partitioned?
+1. List and describe the operations we can perform on a TDQ
+1. What is a Destination Control Table?
+1. What is Automatic Task Initiation?
+1. What is Temporary Storage Control?
+1. List some typical uses of TSQs.
+1. What are Queues? 
+1. What are the types of queues?
+1. What is the difference between TDQ and TSQ?
+1. Is random access possible in TDQ?
+1. How is random access done in TSQ?
+1. Can you delete a single item in TSQ?
 ## Tools
 ### CA7
 1. 
