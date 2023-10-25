@@ -256,6 +256,7 @@ file?
 1. Is random access possible in TDQ?
 1. How is random access done in TSQ?
 1. Can you delete a single item in TSQ?
+
 ## Tools
 ### CA7
 1. 
