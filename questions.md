@@ -274,5 +274,27 @@ CICS program?
 1. How is compilation done for CICS with DB2 program?
 ## Tools
 ### CA7
-1. 
+1. What is CA7?
+1. What is a batch cycle?
+1. What are the 2 different ways of initiating a job?
+1. What is a schid?
+1. Define the following terms:
+    1. Dead Line Time
+    1. Due Out Time
+    1. Elapsed Time
+    1. Submit Time
+    1. Lead Time/Look Back Time
+1. What is a Restart?
+1. What are the 3 different kinds of Restarts?
+1. Define and differentiate between the following actions
+    1. FORCE COMPLETE
+    1. CANCEL
+    1. RESTART
+    1. RE-RUN
+1. What does it mean to put a job on hold?
+1. Define and describe the 3 main queues in CA-7:
+    1. Request Queue
+    1. Ready Queue
+    1. Active Queue
+1. Describe the flow of jobs through the different queues. 
 ### Endevor
