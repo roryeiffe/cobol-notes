@@ -6,6 +6,14 @@
     - Time-based, a stream of jobs that will run in a particular time
 
 ## CA7
+- CA7 is an online, real time, interactive system which automatically controls, schedules, and initiates work according to time-driven and/or event-driven activities.
+    - Jobs
+    - Scheduling
+    - Requirement Definitions
+- Batch Cycle - Sequencing of jobs to run order is called Batch Cycle
+    - Successive jobs are initiated automatically when the previous jobs are completed and all requirements are satisfied
+- The initiation of the job is done in 2 ways:
+    - 
 - When running a job through CA7, job needs a Schid (schedule id)
 - MIPS - Million Instructions Per Second
 
