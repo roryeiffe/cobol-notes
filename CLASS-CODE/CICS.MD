@@ -45,3 +45,9 @@
 - ![KSDS1](./imgs/CICS/KSDS1.png)
 - ![KSDS1](./imgs/CICS/KSDS2.png)
 - ![KSDS1](./imgs/CICS/KSDS3.png)
+
+### CICS DB2
+#### CBDBCSCP
+- ![CBDBCSCP](./imgs/CICS/CBDBCSCP.png)
+#### CBDBCSBD
+- ![CBDBCSBD](./imgs/CICS/CBDBCSBD.png)

@@ -256,7 +256,22 @@ file?
 1. Is random access possible in TDQ?
 1. How is random access done in TSQ?
 1. Can you delete a single item in TSQ?
-
+1. List and describe the Program Control Commands. 
+    1. LINK
+    1. XCTL
+    1. RETURN
+    1. LOAD
+    1. RELEASE
+1. What is COMMAREA? How is it used?
+1. What is the difference between Link and XCTL?
+1. When is Release command used?
+1. What is CICS Attachment Facility?
+1. What is the Resource Control Table?
+1. How is DB2 Sql statements included in 
+CICS program?
+1. What are host variables?
+1. What is RCT?
+1. How is compilation done for CICS with DB2 program?
 ## Tools
 ### CA7
 1. 
