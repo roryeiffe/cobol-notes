@@ -24,6 +24,7 @@
                 - Note: cancellation of the jobs in the Ready Queue or active queue does not cause termination of the jobs' execution
                 - Using cancel command not only removes the job from request queue but also it it doesn't trigger the other jobs
             - Force Complete - mark the status of the jobs as complete and also triggers the successor jobs
+        
         - ![request queue](./imgs/request-queue.png)
     - Ready Queue - LRDY
         - Once the job meets the requirements, the job moves from the request queue to the Ready Queue
