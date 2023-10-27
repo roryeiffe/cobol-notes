@@ -89,7 +89,6 @@
                     - Default Values
                         - DISP = NEW -> DELETE, DELETE
                         - DISP = OLD, SHR -> KEEP, KEEP
-                        - 
                 - DCB - Directory Control Block - (LRECL=80,BLKSIZE=800,RECFM=FB,DSORG=PS)
                     - DSORG - can be written in DCB or as a separate parameter
                         - PS -> PS
