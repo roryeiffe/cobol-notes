@@ -6,7 +6,7 @@
         - Note: Signed variable, by default, is sign leading. The sign will be combined with the leading digit with the below convention
     - 01 WS01-A     PIC S9(03) sign leading VALUE +123 A23
     - 01 WS01-B     PIC S9(03) sign trailing VALUE +123 12C
-    - Convention -> +1 -> A, +2 -> B -> -1 -> j, -2 -> k ... -9 -> R, +0 -> {, -0 -> }
+    - Convention -> +1 -> A, +2 -> B, -1 -> j, -2 -> k ... -9 -> R, +0 -> {, -0 -> }
     - 01 WS-01-STS    PIC S9(04) sign trailing Separate VALUE 123+
     - 01 WS-01-SLS    PIC S9(04) sign leading  Separate VALUE +123
 - Decimal Variables
@@ -94,7 +94,7 @@
     - Negated Condition - Not
     - Combined Condition - AND/OR
 
-- Evaluate is more preferred over evaluate statement
+- Evaluate is more preferred over if statement
 - If:
     - Syntax:
         - IF (CONDITION) THEN

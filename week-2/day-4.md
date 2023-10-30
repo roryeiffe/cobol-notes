@@ -1,6 +1,6 @@
 ## COBOL - Common Business Oriented Language
 - Cannot submit a COBOL program
-- COBOL created aroud 1958
+- COBOL created around 1958
 - CODASYL - conference in the Pentagon building
 - Funded by the American government
 - Dr. Grace Hopper
