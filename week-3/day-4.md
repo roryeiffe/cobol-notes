@@ -27,7 +27,7 @@
 2. An array must have a OCCURS clause
 3. Array can be a group item OR a member item
 4. An array element can be referred by a subscript variable 
-5. An array element can be refered by the index variable if the array is INDEXED
+5. An array element can be referred by the index variable if the array is INDEXED
 6. The elements are from 1 to the size of the array
     - Ex: Array occurs 10 times, then the elements can be referred from 1 to 10
 ### SIMPLE ARRAY
