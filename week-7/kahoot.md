@@ -4,4 +4,5 @@
 - [CICS](https://create.kahoot.it/share/cics/5b8da4b7-15d6-4e22-8c9a-9f18da66e1c7)
 - [JCL + COBOL](https://create.kahoot.it/share/cobol-mainframe-jcl/864019e0-02af-4270-91b9-8cfbd57ba026)
 - [DB2 + CICS + Tools](https://create.kahoot.it/share/cics-mainframe-tools-misc-db2/a375f195-fef4-4914-a940-cab220d02ce2)
-- [CA7 and other Tools](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+- [CA7 and other Tools](https://create.kahoot.it/share/mainframe-tools-misc/c6b241c3-d70b-4279-be86-e5bfff46389b)
+- [11/2/2023 Cumulative QC Answers](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
