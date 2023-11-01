@@ -1,0 +1,19 @@
+## Presentation Tips:
+- Confidence - Remember that the hard part is over, all you have to do is show off your working project and/or talk about the process.
+- Soft Skills - Enunciate, answer questions (At end of presentations)
+- What to talk about/show if your project is working
+    - Run the program and show off the different use cases (logging in, registering, etc.)
+    - Don't need to show off the code
+    - Can talk about the process and obstacles you overcame
+- What to talk about/show if your project isn't working/partially working
+    - Show the output that is working
+    - Talk about obstacles and how you overcame them
+    - Can show off the code, and talk about how it would work in theory
+    - Explain in detail why certain things aren't working and how/if you could solve them if given more time
+- Common Questions:
+    - What was your favorite part of the project?
+    - What was the trickiest part of the project?
+    - What do you wish you had known at the beginning of the project?
+    - What would you have done differently?
+- Additional Tips:
+    - Can mention that you're excited to learn more about these technologies so that you could even gain more insight into why these issues were happening in the first place.

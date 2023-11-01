@@ -1,2 +1,3 @@
 - [Mainframe/JCL](https://create.kahoot.it/share/mainframe-jcl/2d4a5c2c-cf16-4014-99c6-224a5482543f)
 - [COBOL](https://create.kahoot.it/share/cobol/eaad36e7-3eff-4ca4-908f-6ad5773a119a)
+- [DB2](https://create.kahoot.it/share/db2/2ede7dd9-ce9b-4614-97b2-8965b260ca97)

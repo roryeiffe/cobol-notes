@@ -22,7 +22,7 @@
     - Every job running in CA7 should have a Schid
     - Schid is very important when triggers are on
     - ![Schid](./imgs/schid.png)
-- Dead Line Time - the time by which the job shold meet the requirements and should start successfully
+- Dead Line Time - the time by which the job should meet the requirements and should start successfully
     - ![deadline time](./imgs/deadline-time.png)
 - Due Out Time - the time before which the job should complete successfully
     - ![due out time](./imgs/due-out-time.png)
