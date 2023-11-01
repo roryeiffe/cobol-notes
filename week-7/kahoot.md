@@ -2,4 +2,6 @@
 - [COBOL](https://create.kahoot.it/share/cobol/eaad36e7-3eff-4ca4-908f-6ad5773a119a)
 - [DB2](https://create.kahoot.it/share/db2/2ede7dd9-ce9b-4614-97b2-8965b260ca97)
 - [CICS](https://create.kahoot.it/share/cics/5b8da4b7-15d6-4e22-8c9a-9f18da66e1c7)
-- [CA7 Tools](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+- [JCL + COBOL](https://create.kahoot.it/share/cobol-mainframe-jcl/864019e0-02af-4270-91b9-8cfbd57ba026)
+- [DB2 + CICS + Tools](https://create.kahoot.it/share/cics-mainframe-tools-misc-db2/a375f195-fef4-4914-a940-cab220d02ce2)
+- [CA7 and other Tools](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
